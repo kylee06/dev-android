@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.usecurityagentmobile"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="15" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.usecurityagentmobile.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.usecurityagentmobile.ML0LoginActivity"
+            android:label="@string/title_activity_ml0_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name="com.example.usecurityagentmobile.ML0TestingActivity"
+            android:label="@string/title_activity_ml0_testing" >
+        </activity>
+        <activity
+            android:name="com.example.usecurityagentmobile.ML1TestingMaliciousActivity"
+            android:label="@string/title_activity_ml1_testing_malicious" >
+        </activity>
+        <activity
+            android:name="com.example.usecurityagentmobile.ML1TestingSecurityVulnerabilityActivity"
+            android:label="@string/title_activity_ml1_testing_security_vulnerability" >
+        </activity>
+        <activity
+            android:name="com.example.usecurityagentmobile.ML1LogviewActivity"
+            android:label="@string/title_activity_ml1_logview" >
+        </activity>
+    </application>
+
+</manifest>
