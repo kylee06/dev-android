@@ -43,6 +43,14 @@
             android:name="com.example.usecurityagentmobile.ML1LogviewActivity"
             android:label="@string/title_activity_ml1_logview" >
         </activity>
+        <activity
+            android:name="com.example.usecurityagentmobile.ResultMaliciousTestingActivity"
+            android:label="@string/title_activity_malicious_testing" >
+        </activity>
+        <activity
+            android:name="com.example.usecurityagentmobile.ResultSecurityVulnerabilityActivity"
+            android:label="@string/title_activity_result_security_vulnerability" >
+        </activity>
     </application>
 
 </manifest>
