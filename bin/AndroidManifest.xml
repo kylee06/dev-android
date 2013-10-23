@@ -51,6 +51,22 @@
             android:name="com.example.usecurityagentmobile.ResultSecurityVulnerabilityActivity"
             android:label="@string/title_activity_result_security_vulnerability" >
         </activity>
+        <activity
+            android:name="com.example.usecurityagentmobile.ResultTabInstallvachineActivity"
+            android:label="@string/title_activity_result_tab_installvachine" >
+        </activity>
+        <activity
+            android:name="com.example.usecurityagentmobile.ResultTabSavingprivacyActivity"
+            android:label="@string/title_activity_result_tab_savingprivacy" >
+        </activity>
+        <activity
+            android:name="com.example.usecurityagentmobile.ResultTabSecuritycheckActivity"
+            android:label="@string/title_activity_result_tab_securitycheck" >
+        </activity>
+        <activity
+            android:name="com.example.usecurityagentmobile.ResultTabAppPermissionActivity"
+            android:label="@string/title_activity_result_tab_app_permission" >
+        </activity>
     </application>
 
 </manifest>

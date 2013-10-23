@@ -10,5 +10,9 @@
     <string name="title_activity_ml1_logview">ML1LogviewActivity</string>
     <string name="title_activity_malicious_testing">MaliciousTestingActivity</string>
     <string name="title_activity_result_security_vulnerability">ResultSecurityVulnerabilityActivity</string>
+    <string name="title_activity_result_tab_installvachine">ResultTabInstallvachineActivity</string>
+    <string name="title_activity_result_tab_savingprivacy">ResultTabSavingprivacyActivity</string>
+    <string name="title_activity_result_tab_securitycheck">ResultTabSecuritycheckActivity</string>
+    <string name="title_activity_result_tab_app_permission">ResultTabAppPermissionActivity</string>
 
 </resources>
