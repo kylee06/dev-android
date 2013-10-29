@@ -2,6 +2,8 @@ package com.example.usecurityagentmobile;
 
 import java.util.ArrayList;
 
+import com.example.dao.AppInformation;
+import com.example.dao.InstalledAppList;
 import com.example.mylistview.AdapterBtnAppDelete;
 import com.example.mylistview.AdapterBtnDetail;
 import com.example.mylistview.ListItem;
@@ -25,12 +27,15 @@ public class ResultTabAppPermissionActivity extends Activity {
 		list = (ListView) findViewById(R.id.listView_result_app_permission);
 
 		dataArr = new ArrayList<ListItem>();
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"설치된 앱1",  "퍼미션 개수","상세정보",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"설치된 앱2",  "퍼미션 개수","상세정보",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"설치된 앱3",  "퍼미션 개수","상세정보",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"설치된 앱4",  "퍼미션 개수","상세정보",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"설치된 앱5",  "퍼미션 개수","상세정보",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"설치된 앱6",  "퍼미션 개수","상세정보",true) );
+	    //dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"설치된 앱1",  "퍼미션 개수","상세정보",true) );
+	    
+	    InstalledAppList installed_app_list = new InstalledAppList();
+		installed_app_list.setInstalledAppList(this.getPackageManager());
+		
+		for(int i=0; i<installed_app_list.installed_app_list.size(); i++){
+			AppInformation app_info = installed_app_list.installed_app_list.get(i);
+			dataArr.add(new ListItem(app_info.getApp_icon(),true,app_info.getApp_name(),""+app_info.getApp_permission_list().size()+"개의 퍼미션","삭제",true) );
+		}
 	    
 
 	    mAdapter = new AdapterBtnDetail(this, R.layout.list_item, dataArr);

@@ -67,6 +67,10 @@
             android:name="com.example.usecurityagentmobile.ResultTabAppPermissionActivity"
             android:label="@string/title_activity_result_tab_app_permission" >
         </activity>
+        <activity
+            android:name="com.example.usecurityagentmobile.ResultDetailPermission"
+            android:label="@string/title_activity_result_detail_permission" >
+        </activity>
     </application>
 
 </manifest>

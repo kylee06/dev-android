@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import com.example.dao.AppInformation;
+import com.example.dao.InstalledAppList;
 
 public class ResultMaliciousTestingActivity extends Activity {
 	ListView list;
@@ -28,13 +30,17 @@ public class ResultMaliciousTestingActivity extends Activity {
 		list = (ListView) findViewById(R.id.listView_result_malicious);
 
 		dataArr = new ArrayList<ListItem>();
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"악성어플1",  "악성코드2개","삭제",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"악성어플2",  "악성코드1개","삭제",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"악성어플3",  "악성코드3개","삭제",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"악성어플4",  "악성코드1개","삭제",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"악성어플5",  "악성코드2개","삭제",true) );
-	    
-
+		
+		InstalledAppList installed_app_list = new InstalledAppList();
+		installed_app_list.setInstalledAppList(this.getPackageManager());
+		
+		for(int i=0; i<installed_app_list.installed_app_list.size(); i++){
+			AppInformation app_info = installed_app_list.installed_app_list.get(i);
+			dataArr.add(new ListItem(app_info.getApp_icon(),true,app_info.getApp_name(),app_info.getApp_publisher(),"삭제",true) );
+		}
+		
+		//dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"악성어플1",  "악성코드2개","삭제",true) );
+		
 	    mAdapter = new AdapterBtnAppDelete(this, R.layout.list_item, dataArr);
 	    list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 	    list.setAdapter(mAdapter);

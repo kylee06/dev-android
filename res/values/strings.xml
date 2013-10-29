@@ -14,5 +14,6 @@
     <string name="title_activity_result_tab_savingprivacy">ResultTabSavingprivacyActivity</string>
     <string name="title_activity_result_tab_securitycheck">ResultTabSecuritycheckActivity</string>
     <string name="title_activity_result_tab_app_permission">ResultTabAppPermissionActivity</string>
+    <string name="title_activity_result_detail_permission">ResultDetailPermission</string>
 
 </resources>
