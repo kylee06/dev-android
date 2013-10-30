@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.example.mylistview.AdapterBtnAppDelete;
 import com.example.mylistview.ListItem;
+import com.example.mylistview.MyAdapter;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -19,7 +20,7 @@ import com.example.dao.InstalledAppList;
 public class ResultMaliciousTestingActivity extends Activity {
 	ListView list;
 	ArrayList<ListItem> dataArr;
-	AdapterBtnAppDelete mAdapter;
+	MyAdapter mAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +37,12 @@ public class ResultMaliciousTestingActivity extends Activity {
 		
 		for(int i=0; i<installed_app_list.installed_app_list.size(); i++){
 			AppInformation app_info = installed_app_list.installed_app_list.get(i);
-			dataArr.add(new ListItem(app_info.getApp_icon(),true,app_info.getApp_name(),app_info.getApp_publisher(),"삭제",true) );
+			dataArr.add(new ListItem(app_info.getApp_icon(),true,app_info.getApp_name(),app_info.getApp_publisher(),1,"삭제",true) );
 		}
 		
 		//dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"악성어플1",  "악성코드2개","삭제",true) );
 		
-	    mAdapter = new AdapterBtnAppDelete(this, R.layout.list_item, dataArr);
+	    mAdapter = new MyAdapter(this, R.layout.list_item, dataArr);
 	    list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 	    list.setAdapter(mAdapter);
 		

@@ -7,6 +7,7 @@ import com.example.dao.InstalledAppList;
 import com.example.mylistview.AdapterBtnAppDelete;
 import com.example.mylistview.AdapterBtnDetail;
 import com.example.mylistview.ListItem;
+import com.example.mylistview.MyAdapter;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -17,7 +18,7 @@ import android.widget.ListView;
 public class ResultTabAppPermissionActivity extends Activity {
 	ListView list;
 	ArrayList<ListItem> dataArr;
-	AdapterBtnDetail mAdapter;
+	MyAdapter mAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +35,11 @@ public class ResultTabAppPermissionActivity extends Activity {
 		
 		for(int i=0; i<installed_app_list.installed_app_list.size(); i++){
 			AppInformation app_info = installed_app_list.installed_app_list.get(i);
-			dataArr.add(new ListItem(app_info.getApp_icon(),true,app_info.getApp_name(),""+app_info.getApp_permission_list().size()+"개의 퍼미션","삭제",true) );
+			dataArr.add(new ListItem(app_info.getApp_icon(),true,app_info.getApp_name(),""+app_info.getApp_permission_list().size()+"개의 퍼미션",3,"상세보기",true) );
 		}
 	    
 
-	    mAdapter = new AdapterBtnDetail(this, R.layout.list_item, dataArr);
+	    mAdapter = new MyAdapter(this, R.layout.list_item, dataArr);
 	    list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 	    list.setAdapter(mAdapter);
 	}

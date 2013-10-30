@@ -51,13 +51,15 @@ public class AdapterBtnDetail extends MyAdapter{
     	   btn.setVisibility(View.INVISIBLE);
        else
     	   btn.setVisibility(View.VISIBLE);
+
        
        btn.setText(myListItemArr.get(position).btn_title);
        btn.setOnClickListener(new Button.OnClickListener(){
     	   public void onClick(View v){
     		   Intent intent = new Intent(context.getApplicationContext(),ResultDetailPermission.class);
-    		   //intent.putExtra("APP_NAME", "asdad");
-    		   this.get
+    		   
+    		   intent.putExtra("LISTID", "asdad");
+    		   
     		   context.startActivity(intent);
     	   }
        });

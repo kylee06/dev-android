@@ -15,7 +15,7 @@ import android.widget.ListView;
 public class ResultTabSavingprivacyActivity extends Activity {
 	ListView list;
 	ArrayList<ListItem> dataArr;
-	AdapterBtnAppDelete mAdapter;
+	MyAdapter mAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +25,11 @@ public class ResultTabSavingprivacyActivity extends Activity {
 		list = (ListView) findViewById(R.id.listView_result_saving_privacy);
 
 		dataArr = new ArrayList<ListItem>();
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"개인정보 저장앱1",  "퍼미션1","삭제",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),false,"개인정보 저장앱2",  "퍼미션1","삭제",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"개인정보 저장앱3",  "퍼미션1","삭제",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"개인정보 저장앱4",  "퍼미션1","삭제",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"개인정보 저장앱5",  "퍼미션1","삭제",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"개인정보 저장앱6",  "퍼미션1","삭제",true) );
-	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"개인정보 저장앱7",  "퍼미션1","삭제",true) );
+	    dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"개인정보 저장앱1","퍼미션1",1,"삭제",true) );
+	    
 	    
 
-	    mAdapter = new AdapterBtnAppDelete(this, R.layout.list_item, dataArr);
+	    mAdapter = new MyAdapter(this, R.layout.list_item, dataArr);
 	    list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 	    list.setAdapter(mAdapter);
 	}
