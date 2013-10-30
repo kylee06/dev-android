@@ -32,7 +32,7 @@ public class ResultMaliciousTestingActivity extends Activity {
 		dataArr = new ArrayList<ListItem>();
 		
 		InstalledAppList installed_app_list = new InstalledAppList();
-		installed_app_list.setInstalledAppList(this.getPackageManager());
+		installed_app_list.getInstalledAppList(this.getPackageManager());
 		
 		for(int i=0; i<installed_app_list.installed_app_list.size(); i++){
 			AppInformation app_info = installed_app_list.installed_app_list.get(i);

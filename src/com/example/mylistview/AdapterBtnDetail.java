@@ -55,17 +55,11 @@ public class AdapterBtnDetail extends MyAdapter{
        btn.setText(myListItemArr.get(position).btn_title);
        btn.setOnClickListener(new Button.OnClickListener(){
     	   public void onClick(View v){
-    		   
     		   Intent intent = new Intent(context.getApplicationContext(),ResultDetailPermission.class);
     		   //intent.putExtra("APP_NAME", "asdad");
+    		   this.get
     		   context.startActivity(intent);
-    		   
-    		   
-                //String str = myDataArr.get(pos).name + "님의 전화번호는 [ "+myDataArr.get(pos).phone+" ] 입니다.";
-                //Toast.makeText(context, str,Toast.LENGTH_SHORT).show();
-            	String str = "상세화면으로 이동";
-            	Toast.makeText(context, str,Toast.LENGTH_SHORT).show();
-                }
+    	   }
        });
 
         return convertView;

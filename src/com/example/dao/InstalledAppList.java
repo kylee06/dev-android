@@ -29,7 +29,7 @@ public class InstalledAppList {
 		installed_app_list = new ArrayList<AppInformation>();
 	}
 
-	public boolean setInstalledAppList(PackageManager pkmgr){
+	public boolean getInstalledAppList(PackageManager pkmgr){
 		if(pkmgr == null)
 			return false;
 		

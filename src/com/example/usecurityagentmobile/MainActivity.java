@@ -3,6 +3,8 @@ package com.example.usecurityagentmobile;
 //import com.example.usecurityagent.MenuMainCheck;
 //import com.example.usecurityagent.R;
 
+import com.example.database.DBManager;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;

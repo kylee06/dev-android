@@ -30,7 +30,7 @@ public class ResultTabAppPermissionActivity extends Activity {
 	    //dataArr.add(new ListItem(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher),true,"설치된 앱1",  "퍼미션 개수","상세정보",true) );
 	    
 	    InstalledAppList installed_app_list = new InstalledAppList();
-		installed_app_list.setInstalledAppList(this.getPackageManager());
+		installed_app_list.getInstalledAppList(this.getPackageManager());
 		
 		for(int i=0; i<installed_app_list.installed_app_list.size(); i++){
 			AppInformation app_info = installed_app_list.installed_app_list.get(i);
